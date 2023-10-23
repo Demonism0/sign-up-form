@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up Form</title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="left">
+        <div id="logo">
+            <img src="./images/thor-logo.png" />
+            THOR
+        </div>
+        <div id="credits">
+            Photo by <a href="https://unsplash.com/@littleppl85">Brandon Morgan</a> on <a href="https://unsplash.com/photos/lightning-strike-during-blue-sky-3qucB7U2l7I">Unsplash</a>.
+        </div>
+    </div>
+    <div class="right">
+        <div id="explanation">
+            <p>Do <b>you</b> have what it takes to be like Thor? Sign up <i>now</i> to get started.</p>
+            <p>You <i>know</i> you want to.</p>
+        </div>
+        <form>
+            <fieldset>
+                <legend>Sign up now!</legend>
+                <label for="first-name">
+                    FIRST NAME
+                    <input type="text" id="first-name" name="first-name" placeholder="Magni" required />
+                </label>
+                <label for="last-name">
+                    LAST NAME
+                    <input type="text" id="last-name" name="last-name" placeholder="Thorson" />
+                </label>
+                <label for="mail">
+                    EMAIL
+                    <input type="email" id="mail" name="email" placeholder="you@example.com" required />
+                </label>
+                <label for="dob">
+                    DATE OF BIRTH
+                    <input type="date" id="dob" name="date-of-birth" required />
+                </label>
+                <label for="pwd">
+                    PASSWORD
+                    <input type="password" id="pwd" name="password" required />
+                    <span id="check"></span>
+                </label>
+                <label for="cfm-pwd">
+                    CONFIRM PASSWORD
+                    <input type="password" id="cfm-pwd" name="cfm-password" required />
+                </label>
+            </fieldset>
+            <button type="submit">Create Account</button>
+        </form>
+        <div id="login">
+            Already have an account? <a href="#">Log in</a>
+        </div>
+    </div>
+</body>
+</html>
