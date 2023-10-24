@@ -18,8 +18,8 @@
     </div>
     <div class="right">
         <div id="explanation">
-            <p>Do <b>you</b> have what it takes to be like Thor? Sign up <i>now</i> to get started.</p>
-            <p>You <i>know</i> you want to.</p>
+            <p>Do you have what it takes to be like Thor? Sign up now to get started.</p>
+            <p>You know you want to.</p>
         </div>
         <form>
             <fieldset>
@@ -42,12 +42,12 @@
                 </label>
                 <label for="pwd">
                     PASSWORD
-                    <input type="password" id="pwd" name="password" required />
-                    <span id="check"></span>
+                    <input type="password" id="pwd" name="password" class="error" required />
+                    <span id="check">* Passwords do not match</span>
                 </label>
                 <label for="cfm-pwd">
                     CONFIRM PASSWORD
-                    <input type="password" id="cfm-pwd" name="cfm-password" required />
+                    <input type="password" id="cfm-pwd" name="cfm-password" class="error" required />
                 </label>
             </fieldset>
             <button type="submit">Create Account</button>
@@ -56,5 +56,27 @@
             Already have an account? <a href="#">Log in</a>
         </div>
     </div>
+    <script>
+        function validatePassword() {
+            if (password.value === '' || cfmPassword.value === '') {
+                password.classList.add('error');
+                cfmPassword.classList.add('error');
+                passwordsMatch.textContent = '* Passwords do not match';
+            } else if (password.value !== cfmPassword.value) {
+                password.classList.add('error');
+                cfmPassword.classList.add('error');
+                passwordsMatch.textContent = '* Passwords do not match';
+            } else {
+                password.classList.remove('error');
+                cfmPassword.classList.remove('error');
+                passwordsMatch.textContent = '';
+            }
+        }
+        const password = document.querySelector('#pwd');
+        const cfmPassword = document.querySelector('#cfm-pwd');
+        const passwordsMatch = document.querySelector('#check');
+        password.addEventListener('change', validatePassword);
+        cfmPassword.addEventListener('change', validatePassword);
+    </script>
 </body>
 </html>
